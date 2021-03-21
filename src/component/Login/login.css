@@ -1,0 +1,10 @@
+form{
+    max-width:480px;
+}
+.login-area .email-input , .password-input , .name-input{
+    border-radius: 0px;
+    border:0px ;
+    border-bottom: 1px solid #00ac96;
+    color: #495057;
+}
+.form-control:focus{outline:0px;box-shadow: none;color: #495057;}

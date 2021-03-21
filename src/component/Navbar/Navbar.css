@@ -1,0 +1,22 @@
+nav{
+    background: #00ac96;
+}
+nav li a, .navbar-brand{
+color: #fff !important;
+font-weight: 500;
+}
+/* .modify-dropdown-menu .dropdown-item:focus, .dropdown-item:hover{
+    background: transparent !important;
+    color: black;
+} */
+
+.dropdown-item{
+    color: white !important;
+    width: 80% !important;
+    margin-left: 5%;
+}
+.btn-primary{
+    background-color: #00ac96!important;
+    margin: 15px 15px;
+    padding: 8px 0;
+}

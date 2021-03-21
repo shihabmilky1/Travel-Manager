@@ -1,0 +1,57 @@
+.form-control:focus{outline:0px;box-shadow: none;color: #495057;}
+
+/* ul.addresses li {
+    list-style: none;
+    position: relative;
+    box-sizing: border-box;
+}
+
+ul.addresses li::before {
+    position: absolute;
+    content: "";
+    background: #fff;
+    left: -9%;
+    width: 3px;
+    height: 100%;
+    margin-left: 1px;
+}
+
+ul.addresses li::before:first-child {
+    width:0
+}
+
+ul.addresses li::after {content: "";position: absolute;width: 10px;height: 10px;background: white;left: -25px;top: 8px;border-radius: 50%;} */
+
+.sessions, li{
+    list-style: none;
+    padding: 0;
+    color: white;
+  }
+  
+
+  .sessions{
+    margin-top: 1rem;
+    border-radius: 12px;
+    position: relative;
+  }
+ .sessions li{
+    padding-bottom: 1.5rem;
+    border-left: 2px solid white;
+    position: relative;
+    padding-left: 20px;
+    margin-left: 10px;}
+    .sessions li:last-child{
+      border: 0px;
+      padding-bottom: 0;
+    }
+   .sessions li:before{
+      content: '';
+      width: 15px;
+      height: 15px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      left: -8px;
+      top: 0px;
+    }
+  
