@@ -10,4 +10,16 @@
 <li>Successful Login</li>
 <li>Continue with Google</li>
 <li>Form Validation Use Regex & useform hook</li>
+<li>we use useState hook</li>
+<li>we use useEffect hook</li>
+<li>we use useHistory hook</li>
+<li>we use useParams hook</li>
+<li>we use createContext hook</li>
+<li>we use useContext hook</li>
+<li>we use bootstrap for wonderful design</li>
+<li>we use react router dom</li>
+<li>we use fontAwesome</li>
+<li>we use react tostify</li>
+<li>we use firebase for create user </li>
+<li>many more</li>
 </ul>
