@@ -22,7 +22,9 @@ const Destination = (props) => {
 
     const [destinations, setDestinations] = useState({
         from: '',
-        pick: ''
+        pick: '',
+        dateForm:'',
+        dateTo:''
     })
 
     const [AddresSubmited, SetAddresSubmited] = useState(false)
@@ -39,11 +41,22 @@ const Destination = (props) => {
     }
     const handleDestination = (e) => {
         let isForm = true;
+        if(destinations.dateForm < destinations.dateTo){
+            isForm = true
+        }
         if (e.target.name === 'from') {
             isForm = /^[a-zA-Z ]/.test(e.target.value);
         }
         if (e.target.name === 'pick') {
             isForm = /^[a-zA-Z ]/.test(e.target.value);
+
+        }
+        if (e.target.name === 'dateForm') {
+            isForm =  /^[0-9\b]/.test(e.target.value);
+
+        }
+        if (e.target.name === 'dateTo') {
+            isForm =  /^[0-9\b]/.test(e.target.value);
 
         }
         if (isForm) {
@@ -56,18 +69,28 @@ const Destination = (props) => {
                 position: 'top-center'
             });
         }
+       
     }
     return (
         <>
             <div className="container">
                 <div className="row mt-5">
                     <div className="col-md-4">
-                        {!AddresSubmited && <div className="card shadow text-center" style={{ border: 'none' }}>
+                        {!AddresSubmited && <div className="card shadow " style={{ border: 'none' }}>
                             <div className="card-body">
                                 <form onSubmit={handleSubmit}>
-                                    <input type="text" onBlur={handleDestination} name="from" placeholder="Pick From" style={inputStyle} className="form-control my-4" />
-                                    <input type="text" onBlur={handleDestination} name="pick" placeholder="Pick To" style={inputStyle} className="form-control my-4" />
+                                    <label className="text-left ml-2 mt-3" htmlFor="">Pick On</label>
+                                    <input type="text" onBlur={handleDestination} name="from" placeholder="Enter City" style=
+                                    {inputStyle} className="form-control" />
+                                    <label className="text-left ml-2 mt-3" htmlFor="">Pick On</label>
+                                    <input type="text" onBlur={handleDestination} name="pick" placeholder="Enter City" style={inputStyle} className="form-control" />
+                                    <label className="text-left ml-2 mt-3" htmlFor="">From</label>
+                                    <input type="date" onBlur={handleDestination} name="dateForm" style={inputStyle} className="form-control" />
+                                    <label className="text-left ml-2 mt-3" htmlFor="">To</label>
+                                    <input type="date" onBlur={handleDestination} name="dateTo" style={inputStyle} className="form-control" />
+                                    <div className="text-center mt-3">
                                     <input type="Submit" className="btn btn-outline-info" style={{ borderRadius: '0px', padding: '6px 25px' }} value='Search' />
+                                    </div>
                                 </form>
                             </div>
                         </div>}
@@ -75,6 +98,9 @@ const Destination = (props) => {
                             <div className="card shadow text-left " style={{ border: 'none' }}>
                                 <div className="card-body">
                                     <div className="p-3" style={{ background: '#00AC96' }}>
+                                        <div className="text-center text-white">
+                                        <b><span>{destinations.dateForm}</span> - <span>{destinations.dateTo}</span></b>
+                                        </div>
                                         <ul class="sessions">
                                             <li><h6>{destinations.from}</h6></li>
                                             <li><h6>{destinations.pick}</h6></li>
@@ -94,7 +120,7 @@ const Destination = (props) => {
                                             <h6>{FindData.price}</h6>
                                         </div>
                                     </div>
-                                    <div class="bg-light text-left d-flex justify-content-around p-3 align-items-center rounded my-2">
+                                    <div class="bg-light text-left d-flex justify-content-around p-3 align-items-center rounded my-1">
                                         <div className="w-25">
                                             <img className="img-fluid" src={FindData.image} alt="" />
                                         </div>
